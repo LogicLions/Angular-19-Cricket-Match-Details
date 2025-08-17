@@ -1,0 +1,28 @@
+<button class="addButton" style="float: right;">Add Match</button>
+<br>
+<br>
+<table id="table">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Team 1</th>
+    <th>Team 2</th>
+    <th>Date</th>
+    <th>Actions</th>
+  </tr>
+  @for(match of matches; track match.id)
+  {
+    <tr>
+        <td>{{match.name}}</td>
+        <td>{{match.type}}</td>
+        <td>{{match.teamone}}</td>
+        <td>{{match.teamtwo}}</td>
+        <td>{{match.date}}</td>
+        <td>
+          <button class="editButton">Edit</button>
+          &nbsp;
+          <button class="deleteButton">Delete</button>
+        </td>
+    </tr>
+  }
+</table>

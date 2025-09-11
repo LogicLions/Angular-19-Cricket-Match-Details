@@ -1,0 +1,19 @@
+<form [formGroup]="teamAddForm" (ngSubmit)="submitTeamAddForm()">
+  <div class="container">
+    <h1>Add Team</h1>
+    <p>Please fill in this form to create a team.</p>
+    <hr>
+
+    <label for="name"><b>Team Name</b></label>
+    <input type="text" placeholder="Enter Team Name" formControlName="name">
+    <span *ngIf="name?.hasError('required') && (name?.dirty || name?.touched)" class="error">*Team Name is required</span> &nbsp;
+    <span *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="error">*Must be atleast 4 characters long(Only Alphabets with spaces)</span>
+    <span *ngIf="successMessage != null || successMessage != ''" class="successMessage">{{successMessage}}</span>
+    <hr>
+
+    <button class="addBtn">Add</button>
+  </div>
+  </form>
+  <div class="containerCancel" routerLink="../teams-list">
+    <span>Cancel</span>
+  </div>

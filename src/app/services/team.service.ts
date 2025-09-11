@@ -15,4 +15,14 @@ export class TeamService {
   {
     return this.http.get<team[]>(this.url);
   }
+
+  addTeam(val:team):Observable<team>
+  {
+    return this.http.post<team>(this.url, val);
+  }
+
+  deleteTeam(val:string):Observable<team>
+  {
+    return this.http.delete<team>(this.url +"/"+ val);
+  }
 }

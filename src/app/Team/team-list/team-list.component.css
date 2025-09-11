@@ -1,0 +1,21 @@
+.addButton
+{
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.addButton:hover
+{
+    opacity: 1;
+}
+
+.editButton
+{
+    cursor: pointer;
+    opacity: 0.9;
+}
+.editButton:hover
+{
+    opacity: 1;
+}
+

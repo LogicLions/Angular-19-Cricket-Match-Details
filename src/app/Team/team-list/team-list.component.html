@@ -1,4 +1,4 @@
-<button class="addButton" style="float: right;">Add Team</button>
+<button class="addButton" style="float: right;" routerLink="../team-add">Add Team</button>
 <br>
 <br>
 <table id="table">
@@ -11,10 +11,17 @@
     <tr>
         <td>{{team.name}}</td>
         <td>
-          <button class="editButton">Edit</button>
+          <button class="editButton" [routerLink]="['../team-edit', team.id]">Edit</button>
           &nbsp;
-          <button class="deleteButton">Delete</button>
+          <button class="deleteButton" (click)="openDeleteModal(team.id)">Delete</button>
         </td>
     </tr>
   }
 </table>
+
+<app-confirm-modal
+  [visible]="isDeleteModalVisible"
+  (confirm)="handleDeleteConfirm($event)"
+>
+
+</app-confirm-modal>

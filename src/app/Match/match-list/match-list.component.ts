@@ -11,6 +11,7 @@ import { MatchService } from '../../services/match.service';
 })
 export class MatchListComponent {
   matches : match[] = [];
+  teamone : string = '';
 
   constructor(private service:MatchService){}
 

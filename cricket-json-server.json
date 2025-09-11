@@ -1,0 +1,336 @@
+{
+  "matches": [
+    {
+      "id": "1",
+      "name": "Ind vs Pak",
+      "type": "T20",
+      "date": "20-08-2025 12:00",
+      "teamone": {
+        "id": 1,
+        "name": "India"
+      },
+      "teamtwo": {
+        "id": 2,
+        "name": "Pakistan"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Ind vs Aus",
+      "type": "T20",
+      "date": "21-08-2025 14:00",
+      "teamone": {
+        "id": 1,
+        "name": "India"
+      },
+      "teamtwo": {
+        "id": 3,
+        "name": "Australia"
+      }
+    }
+  ],
+  "teams": [
+    {
+      "id": "1",
+      "name": "India"
+    },
+    {
+      "id": "2",
+      "name": "Pakistan"
+    },
+    {
+      "id": "3",
+      "name": "Australia"
+    },
+    {
+      "id": "a55e",
+      "name": "England"
+    },
+    {
+      "id": "7314",
+      "name": "South Africa"
+    },
+    {
+      "id": "3777",
+      "name": "West Indies"
+    },
+    {
+      "id": "3269",
+      "name": "New Zealand"
+    },
+    {
+      "id": "d882",
+      "name": "Afganistan"
+    },
+    {
+      "id": "4422",
+      "name": "Sri Lanka"
+    }
+  ],
+  "players": [
+    {
+      "id": "1",
+      "name": "Ravindra Jadeja",
+      "team": {
+        "id": 1,
+        "name": "India"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Arshdeep Singh",
+      "team": {
+        "id": 1,
+        "name": "India"
+      }
+    },
+    {
+      "id": "3",
+      "name": "Hardik Pandya",
+      "team": {
+        "id": 1,
+        "name": "India"
+      }
+    },
+    {
+      "id": "4",
+      "name": "Rohit Sharma",
+      "team": {
+        "id": 1,
+        "name": "India"
+      }
+    },
+    {
+      "id": "5",
+      "name": "Virat Kohli",
+      "team": {
+        "id": 1,
+        "name": "India"
+      }
+    },
+    {
+      "id": "6",
+      "name": "KL Rahul",
+      "team": {
+        "id": 1,
+        "name": "India"
+      }
+    },
+    {
+      "id": "7",
+      "name": "Shreyas Iyer",
+      "team": {
+        "id": 1,
+        "name": "India"
+      }
+    },
+    {
+      "id": "8",
+      "name": "Shubman Gill",
+      "team": {
+        "id": 1,
+        "name": "India"
+      }
+    },
+    {
+      "id": "9",
+      "name": "Kuldeep Yadav",
+      "team": {
+        "id": 1,
+        "name": "India"
+      }
+    },
+    {
+      "id": "10",
+      "name": "Avesh Khan",
+      "team": {
+        "id": 1,
+        "name": "India"
+      }
+    },
+    {
+      "id": "11",
+      "name": "Ishan Kishan",
+      "team": {
+        "id": 1,
+        "name": "India"
+      }
+    },
+    {
+      "id": "12",
+      "name": "Hasan Nawaz",
+      "team": {
+        "id": 2,
+        "name": "Pakistan"
+      }
+    },
+    {
+      "id": "13",
+      "name": "Usman Khan",
+      "team": {
+        "id": 2,
+        "name": "Pakistan"
+      }
+    },
+    {
+      "id": "14",
+      "name": "Mohammad Ali",
+      "team": {
+        "id": 2,
+        "name": "Pakistan"
+      }
+    },
+    {
+      "id": "15",
+      "name": "Akif Javed",
+      "team": {
+        "id": 2,
+        "name": "Pakistan"
+      }
+    },
+    {
+      "id": "16",
+      "name": "Sufiyan Muqeem",
+      "team": {
+        "id": 2,
+        "name": "Pakistan"
+      }
+    },
+    {
+      "id": "17",
+      "name": "Tayyab Tahir",
+      "team": {
+        "id": 2,
+        "name": "Pakistan"
+      }
+    },
+    {
+      "id": "18",
+      "name": "Abrar Ahmed",
+      "team": {
+        "id": 2,
+        "name": "Pakistan"
+      }
+    },
+    {
+      "id": "19",
+      "name": "Haseebullah Khan",
+      "team": {
+        "id": 2,
+        "name": "Pakistan"
+      }
+    },
+    {
+      "id": "20",
+      "name": "Faisal Akram",
+      "team": {
+        "id": 2,
+        "name": "Pakistan"
+      }
+    },
+    {
+      "id": "21",
+      "name": "Aamer Jamal",
+      "team": {
+        "id": 2,
+        "name": "Pakistan"
+      }
+    },
+    {
+      "id": "22",
+      "name": "Saim Ayub",
+      "team": {
+        "id": 2,
+        "name": "Pakistan"
+      }
+    },
+    {
+      "id": "23",
+      "name": "Alex Carey",
+      "team": {
+        "id": 3,
+        "name": "Australia"
+      }
+    },
+    {
+      "id": "24",
+      "name": "Josh Inglis",
+      "team": {
+        "id": 3,
+        "name": "Australia"
+      }
+    },
+    {
+      "id": "25",
+      "name": "Travis Head",
+      "team": {
+        "id": 3,
+        "name": "Australia"
+      }
+    },
+    {
+      "id": "26",
+      "name": "Marnus Labuschagne",
+      "team": {
+        "id": 3,
+        "name": "Australia"
+      }
+    },
+    {
+      "id": "27",
+      "name": "Cameron Green",
+      "team": {
+        "id": 3,
+        "name": "Australia"
+      }
+    },
+    {
+      "id": "28",
+      "name": "Steve Smith",
+      "team": {
+        "id": 3,
+        "name": "Australia"
+      }
+    },
+    {
+      "id": "29",
+      "name": "Adam Zampa",
+      "team": {
+        "id": 3,
+        "name": "Australia"
+      }
+    },
+    {
+      "id": "30",
+      "name": "Nathan Ellis",
+      "team": {
+        "id": 3,
+        "name": "Australia"
+      }
+    },
+    {
+      "id": "31",
+      "name": "Allan Border",
+      "team": {
+        "id": 3,
+        "name": "Australia"
+      }
+    },
+    {
+      "id": "32",
+      "name": "Riley Meredith",
+      "team": {
+        "id": 3,
+        "name": "Australia"
+      }
+    },
+    {
+      "id": "33",
+      "name": "Mitchell Marsh",
+      "team": {
+        "id": 3,
+        "name": "Australia"
+      }
+    }
+  ]
+}

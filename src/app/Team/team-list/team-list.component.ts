@@ -2,7 +2,7 @@ import { Component, Input, Output } from '@angular/core';
 import { TeamService } from '../../services/team.service';
 import { team } from '../../Interfaces/team';
 import { TeamAddComponent } from "../team-add/team-add.component";
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { ConfirmModalComponent } from '../../Shared/confirm-modal/confirm-modal.component';
 
 @Component({
@@ -16,7 +16,7 @@ export class TeamListComponent {
   isDeleteModalVisible:boolean = false;
   recordToDelete : string | null = null;
 
-  constructor(private service:TeamService){}
+  constructor(private service:TeamService, private router: Router){}
 
   ngOnInit()
   {
@@ -29,6 +29,11 @@ export class TeamListComponent {
       console.log(result);
       this.teams = result;
     });    
+  }
+
+  updateTeam(id:string)
+  {
+    this.router.navigate(['/team-add', id]);
   }
 
   openDeleteModal(id:string)

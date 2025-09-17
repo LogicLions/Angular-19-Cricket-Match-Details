@@ -11,7 +11,7 @@
     <tr>
         <td>{{team.name}}</td>
         <td>
-          <button class="editButton" [routerLink]="['../team-edit', team.id]">Edit</button>
+          <button class="editButton" (click)="updateTeam(team.id)">Edit</button>
           &nbsp;
           <button class="deleteButton" (click)="openDeleteModal(team.id)">Delete</button>
         </td>

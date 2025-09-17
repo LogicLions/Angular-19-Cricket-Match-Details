@@ -8,5 +8,6 @@ export const routes: Routes = [
     {path:"", component:MatchListComponent},
     {path:"teams-list", component:TeamListComponent},
     {path:"team-add", component:TeamAddComponent},
+    {path:"team-add/:id", component:TeamAddComponent},
     {path:"players-list", component:PlayerListComponent}
 ];

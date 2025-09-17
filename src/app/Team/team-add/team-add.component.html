@@ -1,4 +1,4 @@
-<form [formGroup]="teamAddForm" (ngSubmit)="submitTeamAddForm()">
+<form [formGroup]="teamAddFormGroup" (ngSubmit)="submitTeamAddForm()">
   <div class="container">
     <h1>Add Team</h1>
     <p>Please fill in this form to create a team.</p>
@@ -9,11 +9,30 @@
     <span *ngIf="name?.hasError('required') && (name?.dirty || name?.touched)" class="error">*Team Name is required</span> &nbsp;
     <span *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="error">*Must be atleast 4 characters long(Only Alphabets with spaces)</span>
     <span *ngIf="successMessage != null || successMessage != ''" class="successMessage">{{successMessage}}</span>
+    <span *ngIf="unsuccessMessage != null || unsuccessMessage != ''" class="unsuccessMessage">{{unsuccessMessage}}</span>
     <hr>
 
-    <button class="addBtn">Add</button>
+    @if(!selectedTeamId)
+    {
+      <button class="addBtn">Add</button>
+    }
+    @else 
+    {
+      <button class="addBtn">Update</button>
+    }
+    
   </div>
   </form>
-  <div class="containerCancel" routerLink="../teams-list">
-    <span>Cancel</span>
-  </div>
+  @if(!selectedTeamId)
+  {
+    <div class="containerCancel" routerLink="../teams-list">
+      <span>Cancel</span>
+    </div>
+  }
+  @else
+  {
+    <div class="containerCancel" routerLink="../../teams-list">
+      <span>Cancel</span>
+    </div>
+  }
+

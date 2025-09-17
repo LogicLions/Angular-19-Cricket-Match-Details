@@ -16,9 +16,22 @@ export class TeamService {
     return this.http.get<team[]>(this.url);
   }
 
-  addTeam(val:team):Observable<team>
+  getTeamById(val:string):Observable<team>
   {
-    return this.http.post<team>(this.url, val);
+    return this.http.get<team>(this.url +"/"+ val);
+  }
+
+  addTeam(val:team):Observable<team>  
+  {
+    const teamObj = {
+      name: val.name
+    }
+    return this.http.post<team>(this.url, teamObj);
+  }
+
+  updateTeam(val:team):Observable<team>
+  {
+    return this.http.put<team>(this.url +"/"+ val.id, val);
   }
 
   deleteTeam(val:string):Observable<team>

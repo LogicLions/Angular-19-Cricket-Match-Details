@@ -14,4 +14,24 @@ export class PlayerService {
   {
     return this.http.get<player[]>(this.url);
   }
+
+  getPlayerById(val :string):Observable<player>
+  {
+    return this.http.get<player>(this.url +"/"+ val);
+  }
+
+  addPlayer(val:player):Observable<player>
+  {
+    return this.http.post<player>(this.url, val);
+  }
+
+  updatePlayer(val:player):Observable<player>
+  {
+    return this.http.put<player>(this.url +"/"+ val.id, val);
+  }
+
+  deletePlayer(val:string):Observable<player>
+  {
+    return this.http.delete<player>(this.url +"/"+ val);
+  }
 }

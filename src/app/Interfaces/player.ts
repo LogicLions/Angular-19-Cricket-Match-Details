@@ -2,7 +2,7 @@ import { team } from "./team"
 
 export interface player
 {
-    id : number,
+    id? : string,
     name : string,
     team : team
 }

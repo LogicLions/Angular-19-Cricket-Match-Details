@@ -12,13 +12,13 @@ import { team } from '../../Interfaces/team';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-team-add',
+  selector: 'app-team-upsert',
   imports: [ReactiveFormsModule, NgIf, RouterLink],
-  templateUrl: './team-add.component.html',
-  styleUrl: './team-add.component.css',
+  templateUrl: './team-upsert.component.html',
+  styleUrl: './team-upsert.component.css',
 })
-export class TeamAddComponent {
-  teamAddFormGroup: FormGroup;
+export class TeamUpsertComponent {
+  teamUpsertFormGroup: FormGroup;
   selectedTeamId: string | null = null;
   successMessage: string = "";
   unsuccessMessage:string = "";
@@ -29,7 +29,7 @@ export class TeamAddComponent {
     private fb: FormBuilder,
     private route: ActivatedRoute
   ) {
-    this.teamAddFormGroup = this.fb.group({
+    this.teamUpsertFormGroup = this.fb.group({
       id:[null],
       name: [
         '',
@@ -50,14 +50,14 @@ export class TeamAddComponent {
         {
           this.service.getTeamById(this.selectedTeamId).subscribe((result:team)=>{
             console.log(result);
-            this.teamAddFormGroup.patchValue(result);
+            this.teamUpsertFormGroup.patchValue(result);
           });
         }
     });
   }
 
-  submitTeamAddForm() {
-    let val = this.teamAddFormGroup.value;
+  submitTeamUpsertForm() {
+    let val = this.teamUpsertFormGroup.value;
 
     if (this.selectedTeamId) {
       this.service.updateTeam(val).subscribe((result:team)=>{
@@ -66,7 +66,7 @@ export class TeamAddComponent {
         {
           this.successMessage =
             "Team '" + result.name + "' updated successfully!!";
-          this.teamAddFormGroup.reset();
+          this.teamUpsertFormGroup.reset();
         }
         else
         {
@@ -74,13 +74,17 @@ export class TeamAddComponent {
         }    
       });
     } else {
-      this.service.addTeam(val).subscribe((result: team) => {
+      const payload : team =
+      {
+        name:val.name
+      }
+      this.service.addTeam(payload).subscribe((result: team) => {
         console.log(result);
         if ((result != null || result != undefined) && result.id != null && result.name != null)
         {
           this.successMessage =
             "Team '" + result.name + "' added successfully!!";
-          this.teamAddFormGroup.reset();
+          this.teamUpsertFormGroup.reset();
         }
         else
         {
@@ -91,6 +95,6 @@ export class TeamAddComponent {
   }
 
   get name() {
-    return this.teamAddFormGroup.get('name');
+    return this.teamUpsertFormGroup.get('name');
   }
 }

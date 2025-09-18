@@ -23,10 +23,7 @@ export class TeamService {
 
   addTeam(val:team):Observable<team>  
   {
-    const teamObj = {
-      name: val.name
-    }
-    return this.http.post<team>(this.url, teamObj);
+    return this.http.post<team>(this.url, val);
   }
 
   updateTeam(val:team):Observable<team>

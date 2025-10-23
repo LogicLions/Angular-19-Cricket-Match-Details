@@ -20,6 +20,8 @@ export class MatchUpsertComponent {
   selectedMatchType : number = 0;
   teams : team[] = [];
   matchUpsertFormGroup : FormGroup;
+  successfulMessage:string|null = null;
+  unsuccessfulMessage:string|null=null;
   nameRegEx:RegExp = /^[a-zA-Z0-9\-\s\/_]+$/;
   matchDateRegEx: RegExp = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d{2}$/;
 
@@ -93,16 +95,29 @@ export class MatchUpsertComponent {
 
     if(!this.selectedMatchId)
       {
-        this.service.addMatch(payload).subscribe((result)=>{
-          console.log(result);          
+        this.service.addMatch(payload).subscribe((result:match)=>{
+          console.log(result);  
+          if (result.id != null && result.id != undefined && result.id != '') {
+          this.successfulMessage =
+            "Match '" + result.name + "' is succesfully added!!";
+            this.matchUpsertFormGroup.reset();
+        } else {
+          this.unsuccessfulMessage = 'Error occured: Unable to add!!';
+        }    
         });
       }
     else
     {
       payload.id = this.selectedMatchId;
-      this.service.updateMatch(payload).subscribe((result)=>{
+      this.service.updateMatch(payload).subscribe((result:match)=>{
         console.log(result);
-        
+        if (result.id != null && result.id != undefined && result.id != '') {
+          this.successfulMessage =
+            "Match '" + result.name + "' is succesfully updated!!";
+            this.matchUpsertFormGroup.reset();
+        } else {
+          this.unsuccessfulMessage = 'Error occured: Unable to update!!';
+        }    
       });
     }
   }

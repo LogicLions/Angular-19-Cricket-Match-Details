@@ -85,25 +85,27 @@ export class PlayerUpsertComponent {
       console.log(payload);
       this.service.addPlayer(payload).subscribe((result: player) => {
         console.log(result);
-        if (result.id != null || result.id != undefined || result.id != '') {
+        if (result.id != null && result.id != undefined && result.id != '') {
           this.successMessage =
             "Player '" + result.name + "' is succesfully added!!";
+            
+        this.playerUpsertFormGroup.reset();
         } else {
           this.unsuccessMessage = 'Error occured: Unable to add!!';
         }
-        this.playerUpsertFormGroup.reset();
       });
     } else {
       payload.id = this.selectedPlayerId;
       this.service.updatePlayer(payload).subscribe((result: player) => {
         console.log(result);
-        if (result.id != null || result.id != undefined || result.id != '') {
+        if (result.id != null && result.id != undefined && result.id != '') {
           this.successMessage =
             "Player '" + result.name + "' is succesfully updated!!";
+            this.playerUpsertFormGroup.reset();
         } else {
           this.unsuccessMessage = 'Error occured: Unable to update!!';
         }
-        this.playerUpsertFormGroup.reset();
+        
       });
     }
   }

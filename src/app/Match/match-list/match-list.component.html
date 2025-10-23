@@ -21,8 +21,13 @@
         <td>
           <button class="editButton" (click)="updateMatch(match.id)">Edit</button>
           &nbsp;
-          <button class="deleteButton">Delete</button>
+          <button class="deleteButton" (click)="showDeleteModal(match.id)">Delete</button>
         </td>
     </tr>
   }
 </table>
+
+<app-confirm-modal
+[visible]="isDeleteModalVisible"
+(confirm)="handleDelete($event)"
+></app-confirm-modal>

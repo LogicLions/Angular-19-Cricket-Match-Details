@@ -29,4 +29,9 @@ export class MatchService {
   {
     return this.http.put<match>(this.url +"/"+ val.id, val);
   }
+
+  deleteMatch(val:string):Observable<match>
+  {
+    return this.http.delete<match>(this.url + "/" + val);
+  }
 }

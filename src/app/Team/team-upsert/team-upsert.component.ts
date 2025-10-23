@@ -62,7 +62,7 @@ export class TeamUpsertComponent {
     if (this.selectedTeamId) {
       this.service.updateTeam(val).subscribe((result:team)=>{
         console.log(result);
-        if ((result != null || result != undefined) && result.id != null && result.name != null )
+        if ((result != null && result != undefined) && result.id != null && result.name != null )
         {
           this.successMessage =
             "Team '" + result.name + "' updated successfully!!";
@@ -80,7 +80,7 @@ export class TeamUpsertComponent {
       }
       this.service.addTeam(payload).subscribe((result: team) => {
         console.log(result);
-        if ((result != null || result != undefined) && result.id != null && result.name != null)
+        if ((result != null && result != undefined) && result.id != null && result.name != null)
         {
           this.successMessage =
             "Team '" + result.name + "' added successfully!!";

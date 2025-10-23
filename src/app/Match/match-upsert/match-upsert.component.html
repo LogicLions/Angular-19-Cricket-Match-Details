@@ -38,6 +38,10 @@
         <span *ngIf="matchDate?.hasError('required') && (matchDate?.touched || matchDate?.dirty)" class="error">*Match Date is required.</span>
         <span *ngIf="matchDate?.invalid && (matchDate?.touched || matchDate?.dirty)" class="error">*Match Date is invalid.</span>
 
+        <br>
+        <br>
+        <span *ngIf="successfulMessage != null && successfulMessage != ''" class="successMessage">{{successfulMessage}}</span>
+        <span *ngIf="unsuccessfulMessage != null && unsuccessfulMessage != ''" class="unsuccessMessage">{{unsuccessfulMessage}}</span>
         @if (!selectedMatchId) 
         {            
             <button class="addBtn">Add</button>

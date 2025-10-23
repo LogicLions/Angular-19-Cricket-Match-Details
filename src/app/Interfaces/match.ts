@@ -2,7 +2,7 @@ import { team } from "./team"
 
 export interface match
 {
-    id:number,
+    id?:string,
     name:string,
     type:string,
     date:string,

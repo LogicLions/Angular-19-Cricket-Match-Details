@@ -14,4 +14,19 @@ export class MatchService {
   {
     return this.http.get<match[]>(this.url);
   }
+
+  getMatchById(id: string): Observable<match>
+  {
+    return this.http.get<match>(this.url +"/"+ id);
+  }
+
+  addMatch(val: match):Observable<match>
+  {
+    return this.http.post<match>(this.url, val);
+  }
+
+  updateMatch(val:match):Observable<match>
+  {
+    return this.http.put<match>(this.url +"/"+ val.id, val);
+  }
 }

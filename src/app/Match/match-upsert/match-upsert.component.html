@@ -1,0 +1,55 @@
+<form [formGroup]="matchUpsertFormGroup" (ngSubmit)="upsertMatchDetails()">
+    <div class="container">
+        <h1>Add Match</h1>
+        <p>Please fill in the form to create the Match.</p>
+        <hr>
+        <label for="name"><b>Match Name</b></label>
+        <input type="text" placeholder="Enter the Match name" formControlName = "name">
+        <span *ngIf="name?.hasError('required') && (name?.touched || name?.dirty)" class="error">*Match Name is required.</span>
+        <span *ngIf="name?.invalid && (name?.touched || name?.dirty)" class="error"> *Name can only contain Alphabets, Numbers, Dashes(-) and Underscores(_).</span>
+
+        <br>
+        <label for="matchType"><b>Match Type</b></label>
+        <select formControlName="matchType" (change)="onMatchTypeChange($event)">
+            <option value="" disabled selected>Select</option>
+            <option *ngFor="let option of matchTypeDropDownOptions" [value]="option.name"> {{option.name}}</option>
+        </select>
+        <span *ngIf="matchType?.hasError('required') && (matchType?.touched || matchType?.dirty)" class="error">*Match Type is required.</span>
+
+        <br>
+        <label for="team1"><b>Team 1</b></label>
+        <select formControlName="team1">
+            <option value="" disabled selected>Select</option>
+            <option *ngFor="let option of teams" [value]="option.id">{{option.name}}</option>
+        </select>
+        <span *ngIf="team1?.hasError('required') && (team1?.touched || team1?.dirty)" class="error">*Team 1 required.</span>
+
+        <br>
+        <label for="team2"><b>Team 2</b></label>
+        <select formControlName="team2">
+            <option value="" disabled selected>Select</option>
+            <option *ngFor="let option of teams" [value]="option.id">{{option.name}}</option>
+        </select>
+        <span *ngIf="team2?.hasError('required') && (team2?.touched || team2?.dirty)" class="error">*Team 2 is required.</span>
+
+        <br>        
+        <label for="matchDate"><b>Match Date</b></label>
+        <input formControlName="matchDate" type="text" placeholder="DD/MM/YYYY">
+        <span *ngIf="matchDate?.hasError('required') && (matchDate?.touched || matchDate?.dirty)" class="error">*Match Date is required.</span>
+        <span *ngIf="matchDate?.invalid && (matchDate?.touched || matchDate?.dirty)" class="error">*Match Date is invalid.</span>
+
+        @if (!selectedMatchId) 
+        {            
+            <button class="addBtn">Add</button>
+        }
+        @else 
+        {
+            <button class="addBtn">Update</button>
+        }
+
+    </div>
+</form>
+
+<div class="containerCancel" routerLink="../">
+    <span>Cancel</span>
+</div>
